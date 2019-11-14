@@ -1,4 +1,4 @@
-public class Dog
+public class Dog implements Comparable<Dog>
 {
     private String name, breed;
     private int age;
@@ -58,6 +58,20 @@ public class Dog
         this.weight = poundsToKg(weight);
     }//end of weight setter
     //brain metods
+    //start of 5.3 PP
+    public int compareTo(Dog someDog)
+    {
+        if(this.age < someDog.getAge())
+        {
+            return -1;
+        }else if(this.age > someDog.getAge())
+        {
+            return 1;
+        }else
+        {
+            return 0;
+        }//end of if
+    }//end of compareTo (and 5.3 PP)
     private double poundsToKg(double pounds)
     {
         double kg;
